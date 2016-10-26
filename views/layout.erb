@@ -3,8 +3,24 @@
   <head>
     <meta charset="utf-8">
     <title>CRM WEB ASSIGNMENT</title>
+    <link rel='stylesheet' type='text/css' href="/style.css">
   </head>
   <body>
-    <%= yield %>
+    <header>
+      <h1>Welcome to <%= @crm_app_name %>!</h1>
+    </header>
+    <nav>
+      <p>Main Menu</p>
+      <ul>
+        <li><a href="/">Home</li>
+        <li><a href="/contacts">View all contacts</li>
+        <li><a href="/contacts/new">Add a new contact</li>
+        <!-- please complete me with links to other action -->
+      </ul>
+    </nav>
+      <%= yield %>
+    <footer>
+      this is made by david moon
+    </footer>
   </body>
 </html>
