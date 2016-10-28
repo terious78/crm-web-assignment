@@ -41,11 +41,12 @@ class Contact
   # This method should accept an id as an argument
   # and return the contact who has that id
   def self.find(id)
-    @@contacts.each do |contact|
-      if id == contact.id
-        return contact
-      end
-    end
+    @@contacts.find { |contact| contact.id == id }
+#    @@contacts.each do |contact|
+#      if id == contact.id
+#        return contact
+#      end
+#    end
   end
 
   # This method should allow you to specify
@@ -95,7 +96,8 @@ class Contact
   # This method should delete the contact
   # HINT: Check the Array class docs for built-in methods that might be useful here
   def delete
-    @@contacts.delete(self)
+#    @@contacts.delete(self)
+    @@contacts.delete_if { |contact| contact.id == self.id }
   end
 
   # Feel free to add other methods here, if you need them.
