@@ -61,10 +61,8 @@ a:visited {
 }
 
 footer {
-  background-color: #ffffff;
   border: .4px solid #007aff;
   text-align: center;
-  text-decoration: none;
   font-size: .7em;
 }
 
@@ -94,6 +92,10 @@ main li {
   font-size: 1.4em;
 }
 
+#totalcontact {
+  color: #ffff00;
+  text-decoration: underline;
+}
   /* Create New Contact */
 form {
   margin: inherit;
