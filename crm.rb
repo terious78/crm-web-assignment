@@ -10,7 +10,7 @@ require 'sinatra'
 # Contact.create('Steve', 'Jobs', 'steve@apple.com', 'Visionary')
 
 get '/' do
-  @crm_app_name = "Welcome to "
+  @crm_app_name = 'Welcome to '
   erb :index
 end
 
@@ -41,13 +41,13 @@ get '/contacts/:id/edit' do
 end
 
 post '/contacts' do
-#  Contact.create(params[:first_name], params[:last_name], params[:email], params[:note])
-#  redirect to('/contacts#')
+  #  Contact.create(params[:first_name], params[:last_name], params[:email], params[:note])
+  #  redirect to('/contacts#')
   contact = Contact.create(
     first_name: params[:first_name],
     last_name:  params[:last_name],
     email:      params[:email],
-    note:       params[:note],
+    note:       params[:note]
   )
   redirect to('/contacts')
 end
@@ -65,15 +65,15 @@ put '/contacts/:id' do
   else
     raise Sinatra::NotFound
   end
+end
 
-  delete '/contacts/:id' do
-    @contact = Contact.find(params[:id].to_i)
-    if @contact
-      @contact.delete
-      redirect to('/contacts')
-    else
-      raise Sinatra::NotFound
-    end
+delete '/contacts/:id' do
+  @contact = Contact.find(params[:id].to_i)
+  if @contact
+    @contact.delete
+    redirect to('/contacts')
+  else
+    raise Sinatra::NotFound
   end
 end
 
